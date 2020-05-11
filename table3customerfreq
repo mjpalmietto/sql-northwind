@@ -1,0 +1,9 @@
+CREATE TABLE frequency_dimension
+AS (SELECT customer_id, order_id, order_date) 
+FROM northwood_fact);
+	Next, we need to create a table to gain insights into our customers’ regions. 
+CREATE TABLE region_dimension
+AS (SELECT customer_id, region) 
+CREATE TABLE shipping_dimension
+AS (SELECT order_id, region, order_date, required_date, shipped_date) 
+FROM northwood_fact);
