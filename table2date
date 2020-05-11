@@ -1,0 +1,9 @@
+CREATE TABLE time_date_dimension
+AS (SELECT order_id, order_date, quantity, units_on_order) 
+FROM northwood_fact);
+ALTER TABLE time_date_dimension
+ADD season season
+WHERE order_date BETWEEN12/21/2018 AND 3/21/2019 season==’winter’;
+WHERE order_date BETWEEN 3/21/2019 AND 6/21/2019 season==’spring’;
+WHERE order_date BETWEEN 6/21/2019 AND 9/21/2019 season=’summer’;
+WHERE order_date BETWEEN 9/21/2019 AND 12/21/2019 season=’fall’;
